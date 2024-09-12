@@ -21,4 +21,8 @@ flyers << Flyer.new("Curly", "curly@example.com", 3000, :gold)
 flyers << Flyer.new("Shemp", "shemp@example.com", 2000)
 
 
-puts flyers.find { |flyer| flyer.status == :bronze }
+kilometer_flown = flyers.map { |flyer| flyer.miles_flown * 1.6  }
+
+total_kilometers = kilometer_flown.reduce(0) { |sum, kilo| sum + kilo}
+
+puts total_kilometers
